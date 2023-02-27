@@ -1,0 +1,7 @@
+.DatePicker {
+    @apply w-80 absolute border border-zinc-500 rounded-lg p-2 hidden;
+}
+
+.DatePicker__visible {
+    @apply block;
+}

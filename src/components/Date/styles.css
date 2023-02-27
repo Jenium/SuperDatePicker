@@ -1,0 +1,27 @@
+.Date {
+    @apply w-8 h-8 rounded;
+    @apply text-xs; 
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+
+    &:hover {
+        @apply bg-sky-100;
+        @apply text-sm;
+    }
+
+    &.currentMonth {
+        @apply text-zinc-300;
+    }
+
+    &.now {
+        @apply text-sky-400 font-semibold;
+    }
+
+    &.currentDay {
+        @apply bg-sky-400 text-sky-50; 
+        
+        &:hover {
+            @apply bg-sky-600 text-sky-50;
+        }
+    }
+}
