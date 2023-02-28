@@ -27,4 +27,12 @@
             @apply bg-sky-600 text-sky-50;
         }
     }
+
+    &.selectedDate {
+        @apply bg-sky-600;
+
+        &:hover {
+            @apply bg-sky-700 text-sky-50;
+        }
+    }
 }

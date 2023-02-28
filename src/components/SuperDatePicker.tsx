@@ -46,7 +46,8 @@ export const SuperDatePicker: FC = () => {
         setCurrentYaer(year);
         setCurrentMonth(month);
         setCurrentDate(date);
-        setDataSelect(`${getZero(date)}/${getZero(month + 1)}/${year}`)
+        setDataSelect(`${getZero(date)}/${getZero(month + 1)}/${year}`);
+        setIsVisible(false);
     }
 
     useEffect(() => {
@@ -74,6 +75,7 @@ export const SuperDatePicker: FC = () => {
                 className={clsx({ 'DatePicker__visible': isVisible })}
                 now={now}
                 date={date}
+                dateSelect={dateSelect}
                 weeksMonth={weeksMonth}
                 handleAction={handleAction}
                 handleSelect={handleSelect}
