@@ -13,7 +13,7 @@
     @apply scale-95;
   }
 
-  &:before {
+  &::before {
     @apply content-[""];
     @apply w-2 h-2 absolute;
     @apply border-b-2 border-zinc-900;

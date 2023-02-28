@@ -1,7 +1,7 @@
 import './styles.css';
 
-import { FC } from 'react';
 import { clsx } from 'clsx';
+import { FC } from 'react';
 
 import { BodyDatePicker } from '../BodyDatePicker';
 import { HeaderDatePicker } from '../HeaderDatePicker';

@@ -1,7 +1,7 @@
 import './styles.css';
 
-import { FC } from 'react';
 import clsx from 'clsx';
+import { FC } from 'react';
 
 interface IButtonNavigation {
   value: string;

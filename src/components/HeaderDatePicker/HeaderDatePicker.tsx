@@ -1,8 +1,8 @@
 import './styles.css';
 
 import { FC } from 'react';
-import { ButtonNavigation } from '../ButtonNavigation';
 
+import { ButtonNavigation } from '../ButtonNavigation';
 import { CurrentMonth } from '../CurrentMonth';
 import { DayNames } from '../DayNames';
 

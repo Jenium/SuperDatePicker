@@ -5,7 +5,7 @@
 .DatePicker_buttonNavigation__left {
   @apply left-0;
 
-  &:before {
+  &::before {
     @apply left-1/2 border-l-2;
     @apply rotate-45 -translate-x-1/4;
   }
@@ -14,7 +14,7 @@
 .DatePicker_buttonNavigation__right {
   @apply right-0;
 
-  &:before {
+  &::before {
     @apply right-1/2 border-r-2;
     @apply -rotate-45 translate-x-1/4;
   }

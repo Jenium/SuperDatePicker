@@ -1,7 +1,7 @@
 import './styles.css';
 
-import { FC, useEffect, useState } from 'react';
 import { clsx } from 'clsx';
+import { FC, useEffect, useState } from 'react';
 
 import { getCurrentMonth, getZero } from '../utils';
 import { DatePicker } from './DatePicker';
