@@ -2,11 +2,14 @@
     @apply w-8 h-8 rounded;
     @apply text-xs; 
     @apply flex items-center justify-center;
-    @apply cursor-pointer;
+    @apply cursor-pointer duration-200 ease-in-out;
 
     &:hover {
         @apply bg-sky-100;
-        @apply text-sm;
+    }
+
+    &:active {
+        @apply scale-95;
     }
 
     &.currentMonth {

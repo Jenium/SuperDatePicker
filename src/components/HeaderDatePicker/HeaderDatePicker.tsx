@@ -1,7 +1,7 @@
 import './styles.css';
 
 import { FC } from 'react';
-import { ButtonNavigation } from '../ButtonNavigatin';
+import { ButtonNavigation } from '../ButtonNavigation';
 
 import { CurrentMonth } from '../CurrentMonth';
 import { DayNames } from '../DayNames';
@@ -14,19 +14,19 @@ interface IHeaderDatePicker {
 
 export const HeaderDatePicker: FC<IHeaderDatePicker> = ({ month, year, action }) => {
     return (
-        <header className='DatePicker_header'>
+        <header className="DatePicker_header">
             <CurrentMonth month={month} year={year} />
 
             <ButtonNavigation
                 className="DatePicker_buttonNavigation__left"
                 action={action} 
-                value='prev'
+                value="prev"
             />
             
             <ButtonNavigation
                 className="DatePicker_buttonNavigation__right"
                 action={action} 
-                value='next'
+                value="next"
             />
 
             <DayNames />

@@ -1,3 +1,9 @@
 .InputDate {
-    @apply input input-bordered w-80 mb-4;
+    @apply w-80 h-12 px-4 mb-4;
+    @apply border border-zinc-400 rounded-lg;
+
+    &:focus {
+        @apply outline outline-2 outline-zinc-200;
+        @apply outline-offset-1;
+    }
 }

@@ -1,7 +1,7 @@
 import './styles.css';
 
-import { FC, useState } from 'react';
-import { clsx } from 'clsx'; 
+import { FC, useEffect, useState } from 'react';
+import { clsx } from 'clsx';
 
 import { getCurrentMonth, getZero } from '../utils';
 import { DatePicker } from './DatePicker';
@@ -14,25 +14,28 @@ export const SuperDatePicker: FC = () => {
     const [currentMonth, setCurrentMonth] = useState(now.getMonth());
     const [currentDate, setCurrentDate] = useState(now.getDate());
 
-    const [isFocused, setIsFocused] = useState(false);
-    
+    const [isVisible, setIsVisible] = useState(false);
+
     const date = new Date(currentYear, currentMonth, currentDate);
     const dateValue = `${getZero(currentDate)}/${getZero(currentMonth + 1)}/${currentYear}`;
     const [dateSelect, setDataSelect] = useState(dateValue);
     const weeksMonth = getCurrentMonth(date);
 
     const handleChange = (value: string) => {
-        const [date = currentDate, month = currentMonth, year = currentYear] = value.split('/').map(item => Number(item));
-        setDataSelect(`${getZero(date)}/${getZero(month + 1)}/${year}`);
-        if (String(year).length === 4) {
-            setCurrentYaer(year);
+        const [date, month, year] = value.split('/').map(item => Number(item));
+
+        console.log(date, month, year);
+
+        if (getZero(date).length !== 2 || getZero(month).length !== 2 || String(year).length !== 4) {
+            setDataSelect(value);
+            return;
         }
-        if (String(month).length === 2 || String(month).length === 1) {
-            setCurrentMonth(month);
-        }
-        if (String(date).length === 2 || String(date).length === 1) {
-            setCurrentDate(date);
-        }
+
+        setDataSelect(`${getZero(date)}/${getZero(month)}/${year}`);
+
+        setCurrentYaer(year);
+        setCurrentMonth(month);
+        setCurrentDate(date);
     }
 
     const handleAction = (action: string) => {
@@ -48,19 +51,29 @@ export const SuperDatePicker: FC = () => {
         setDataSelect(`${getZero(date)}/${getZero(month + 1)}/${year}`)
     }
 
+    useEffect(() => {
+        const hanleClickDocument = (e) => {
+            e.target.querySelector('.SuperDatePicker')
+                ? setIsVisible(false)
+                : null
+        }
+
+        document.addEventListener('click', hanleClickDocument);
+        return () => { document.removeEventListener('click', hanleClickDocument) };
+    }, []);
+
     return (
         <div className="SuperDatePicker">
-            <InputDate 
+            <InputDate
                 name="date"
                 type="text"
                 value={dateSelect}
                 onChange={(e) => handleChange(e.target.value)}
-                onBlur={() => setTimeout(() => setIsFocused(false), 200) }
-                onFocus={() => setIsFocused(true)}
+                onFocus={() => setIsVisible(true)}
             />
 
             <DatePicker
-                className={clsx({'DatePicker__visible': isFocused})}
+                className={clsx({ 'DatePicker__visible': isVisible })}
                 now={now}
                 date={date}
                 weeksMonth={weeksMonth}
