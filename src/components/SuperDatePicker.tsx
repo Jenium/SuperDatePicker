@@ -32,7 +32,7 @@ export const SuperDatePicker: FC = () => {
         setDataSelect(`${getZero(date)}/${getZero(month)}/${year}`);
 
         setCurrentYaer(year);
-        setCurrentMonth(month);
+        setCurrentMonth(month - 1);
         setCurrentDate(date);
     }
 
