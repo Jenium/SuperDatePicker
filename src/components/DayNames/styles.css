@@ -1,8 +1,8 @@
 .DatePicker_daysWeek {
-    @apply mt-2 flex justify-between gap-2;
+  @apply mt-2 flex justify-between gap-2;
 }
 
 .DatePicker_dayName {
-    @apply w-8 h-8 flex items-center justify-center;
-    @apply text-xs;
+  @apply w-8 h-8 flex items-center justify-center;
+  @apply text-xs;
 }

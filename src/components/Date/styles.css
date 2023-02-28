@@ -1,38 +1,38 @@
 .Date {
-    @apply w-8 h-8 rounded;
-    @apply text-xs; 
-    @apply flex items-center justify-center;
-    @apply cursor-pointer duration-200 ease-in-out;
+  @apply w-8 h-8 rounded;
+  @apply text-xs;
+  @apply flex items-center justify-center;
+  @apply cursor-pointer duration-200 ease-in-out;
+
+  &:hover {
+    @apply bg-sky-100;
+  }
+
+  &:active {
+    @apply scale-95;
+  }
+
+  &.currentMonth {
+    @apply text-zinc-300;
+  }
+
+  &.now {
+    @apply text-sky-400 font-semibold;
+  }
+
+  &.currentDay {
+    @apply bg-sky-400 text-sky-50;
 
     &:hover {
-        @apply bg-sky-100;
+      @apply bg-sky-600 text-sky-50;
     }
+  }
 
-    &:active {
-        @apply scale-95;
+  &.selectedDate {
+    @apply bg-sky-600;
+
+    &:hover {
+      @apply bg-sky-700 text-sky-50;
     }
-
-    &.currentMonth {
-        @apply text-zinc-300;
-    }
-
-    &.now {
-        @apply text-sky-400 font-semibold;
-    }
-
-    &.currentDay {
-        @apply bg-sky-400 text-sky-50; 
-        
-        &:hover {
-            @apply bg-sky-600 text-sky-50;
-        }
-    }
-
-    &.selectedDate {
-        @apply bg-sky-600;
-
-        &:hover {
-            @apply bg-sky-700 text-sky-50;
-        }
-    }
+  }
 }
