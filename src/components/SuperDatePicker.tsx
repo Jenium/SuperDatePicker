@@ -24,8 +24,6 @@ export const SuperDatePicker: FC = () => {
     const handleChange = (value: string) => {
         const [date, month, year] = value.split('/').map(item => Number(item));
 
-        console.log(date, month, year);
-
         if (getZero(date).length !== 2 || getZero(month).length !== 2 || String(year).length !== 4) {
             setDataSelect(value);
             return;
